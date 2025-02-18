@@ -1,17 +1,22 @@
-int posX = 0;
+int h;
+int m;
+int s;
 
-void setup(){
+String timeString;
+
+void setup() {
   size(500, 500);
-  frameRate(60);
+  textAlign(CENTER, CENTER);
+  textSize(40);
 }
 
-void draw(){
-  background(200, 20, 100);
+void draw() {
+  h = hour();
+  m = minute();
+  s = second();
   
-  line(posX, 10, posX, height);
-  posX++;
+  timeString = nf(h, 2) + ":" + nf(m, 2) + ":" + nf(s,2);
   
-  if (posX > width) {
-    posX = 0;
-  }
+  background(0);
+  text(timeString, width/2, height/2);
 }
