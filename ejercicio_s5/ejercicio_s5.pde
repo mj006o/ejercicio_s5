@@ -1,16 +1,17 @@
-void setup() {
-  size(500,500);
+int posX = 0;
+
+void setup(){
+  size(500, 500);
+  frameRate(60);
 }
 
-void draw() {
-  background(158, 158, 200);
-  noStroke();
+void draw(){
+  background(200, 20, 100);
   
-  if((mouseX > 50 && mouseY < 100) && (mouseY >50 && mouseY < 100)){
-    fill(45, 68, 80);
-  } else{
-    fill(255);
+  line(posX, 10, posX, height);
+  posX++;
+  
+  if (posX > width) {
+    posX = 0;
   }
-  
-  rect(50, 50, 50, 50);
 }
